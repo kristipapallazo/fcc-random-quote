@@ -1,0 +1,143 @@
+.app {
+  height: inherit;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  background-color: var(--primary);
+}
+#info-label {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: var(--primary);
+}
+#quote-box {
+  height: auto;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-rad);
+  background-color: white;
+  padding: 20px;
+}
+#text {
+  flex: 1;
+  color: var(--primary);
+  margin: 0 auto;
+  width: 80%;
+  font-size: 2rem;
+  overflow: auto;
+}
+#first-char {
+  font-size: 7rem;
+  font-weight: 900;
+  position: relative;
+  z-index: 1000;
+}
+#cloned-first-char {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: -1;
+  color: var(--second);
+  opacity: 0.5;
+}
+#rest-chars {
+  z-index: 1000;
+}
+#author {
+  font-weight: bold;
+  opacity: 0.5;
+  color: var(--second);
+}
+#author,
+#category {
+  text-align: right;
+  margin-top: 10px;
+  flex-shrink: 1;
+}
+#btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 1;
+  margin-top: 30px;
+}
+.btn {
+  background-color: var(--primary);
+  border: 2px solid var(--primary);
+  position: relative;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: var(--border-rad);
+  z-index: 1000;
+  transition: var(--smoth);
+  color: white;
+}
+.btn::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--primary);
+  opacity: 0.6;
+  border-radius: var(--border-rad);
+  transition: var(--smoth);
+}
+.btn:hover::after {
+  bottom: 10px;
+  left: 10px;
+}
+.btn:hover {
+  background-color: var(--primary);
+}
+#tweet-quote {
+  text-decoration: none;
+  color: inherit;
+}
+#web-author {
+  color: white;
+}
+#web-author-name {
+  font-weight: bold;
+  font-size: 18px;
+  font-family: fantasy;
+}
+
+/* mobile */
+@media only screen and (max-width: 768px) {
+  .app {
+    row-gap: 10px;
+  }
+
+  #quote-box {
+    width: 90%;
+  }
+
+  #text {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    margin-top: 10px;
+  }
+}
+
+/* mobile small screens */
+@media only screen and (max-width: 480px) {
+  #text {
+    font-size: 1.2rem;
+  }
+}
